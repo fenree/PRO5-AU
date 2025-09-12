@@ -1,0 +1,5 @@
+docs/*.pdf
+docs/.typst/
+firmware/build/*.d
+firmware/build/*.lst
+firmware/build/*.o
