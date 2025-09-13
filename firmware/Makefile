@@ -35,6 +35,7 @@ BUILD_DIR = build
 # source
 ######################################
 # C sources
+STMHOME=/home/zephyr/STM32Cube
 C_SOURCES =  \
 Core/Src/main.c \
 Core/Src/stm32h7xx_it.c \
@@ -45,29 +46,29 @@ Core/Src/syscalls.c \
 Core/Src/gpio.c \
 Core/Src/ltdc.c \
 Core/Src/quadspi.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc_ex.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dsi.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_qspi.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c \
-/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc_ex.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dsi.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_qspi.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c \
+$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -132,10 +133,10 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
--I/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Inc \
--I/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy \
--I/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include \
--I/home/zephyr/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/CMSIS/Include
+-I$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Inc \
+-I$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy \
+-I$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include \
+-I$(STMHOME)/Repository/STM32Cube_FW_H7_V1.12.0/Drivers/CMSIS/Include
 
 
 # compile gcc flags
