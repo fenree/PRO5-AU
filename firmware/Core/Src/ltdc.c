@@ -57,22 +57,23 @@ void MX_LTDC_Init(void) {
   if (HAL_LTDC_Init(&hltdc) != HAL_OK) {
     Error_Handler();
   }
-  pLayerCfg.WindowX0 = 0;
-  pLayerCfg.WindowX1 = 0;
-  pLayerCfg.WindowY0 = 0;
-  pLayerCfg.WindowY1 = 0;
-  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_ARGB8888;
-  pLayerCfg.Alpha = 0;
-  pLayerCfg.Alpha0 = 0;
-  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
-  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
-  pLayerCfg.FBStartAdress = 0;
-  pLayerCfg.ImageWidth = 0;
-  pLayerCfg.ImageHeight = 0;
-  pLayerCfg.Backcolor.Blue = 0;
-  pLayerCfg.Backcolor.Green = 0;
-  pLayerCfg.Backcolor.Red = 0;
-  if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg, 0) != HAL_OK) {
+LTDC_LayerCfgTypeDef layerCfg;
+layerCfg.WindowX0 = 0;
+layerCfg.WindowX1 = 800;  // Full width
+layerCfg.WindowY0 = 0;
+layerCfg.WindowY1 = 480;  // Full height
+layerCfg.PixelFormat = LTDC_PIXEL_FORMAT_ARGB8888;  // 32-bit color
+layerCfg.Alpha = 255;  // Fully opaque
+layerCfg.Alpha0 = 0;
+layerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_PAxCA;
+layerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_PAxCA;
+layerCfg.FBStartAdress = 0xD0000000;  // SDRAM framebuffer address
+layerCfg.ImageWidth = 800;
+layerCfg.ImageHeight = 480;
+layerCfg.Backcolor.Blue = 0;
+layerCfg.Backcolor.Green = 0;
+layerCfg.Backcolor.Red = 0;
+	if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg, 0) != HAL_OK) {
     Error_Handler();
   }
   pLayerCfg1.WindowX0 = 0;
