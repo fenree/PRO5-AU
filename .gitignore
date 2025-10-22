@@ -1,2 +1,4 @@
+build/
 .cache/
+Core/Src/Backup/
 compile_commands.json
