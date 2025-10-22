@@ -37,20 +37,20 @@ extern LTDC_HandleTypeDef hltdc;
 /* USER CODE BEGIN Private defines */
 
 // (Valid) Data Width
-#define HDW 800 // Horizontal
-#define VDW 480 // Vertical
+#define HDW 1024 // Horizontal
+#define VDW 600  // Vertical
 // Period
-#define HP 928
-#define VP 525
+#define HP 1344
+#define VP 635
 // Pulse Width
-#define HW 48
-#define VW 3
+#define HW 140
+#define VW 20
 // back porch
-#define HBP 40
-#define VBP 29
+#define HBP 160
+#define VBP 23
 // front porch
-#define HFP (HP - HW - HBP - HDW)
-#define VFP (VP - VW - VBP - VDW)
+#define HFP 160 // (HP - HW - HBP - HDW)
+#define VFP 12  // (VP - VW - VBP - VDW)
 
 /* USER CODE END Private defines */
 
@@ -65,4 +65,3 @@ void MX_LTDC_Init(void);
 #endif
 
 #endif /* __LTDC_H__ */
-

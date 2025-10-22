@@ -102,6 +102,24 @@ int main(void) {
   MX_USART1_UART_Init();
   MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
+  // Framebuffer pointer (matches LTDC layer config)
+  uint32_t *framebuffer = (uint32_t *)0xD0000000;
+
+  // Simple color bar test pattern
+  for (int y = 0; y < 480; y++) {
+    for (int x = 0; x < 800; x++) {
+      if (x < 200) {
+        framebuffer[y * 800 + x] = 0xFFFF0000; // Red
+      } else if (x < 400) {
+        framebuffer[y * 800 + x] = 0xFF00FF00; // Green
+      } else if (x < 600) {
+        framebuffer[y * 800 + x] = 0xFF0000FF; // Blue
+      } else {
+        framebuffer[y * 800 + x] = 0xFFFFFFFF; // White
+      }
+    }
+  }
+
   char *buf = "uart";
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
   /* USER CODE END 2 */
