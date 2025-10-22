@@ -39,10 +39,7 @@ void MX_FMC_Init(void) {
 
   /* USER CODE END FMC_Init 1 */
 
-  /** Perform the SDRAM1 memory initialization sequence
-   */
   hsdram1.Instance = FMC_SDRAM_DEVICE;
-  /* hsdram1.Init */
   hsdram1.Init.SDBank = FMC_SDRAM_BANK1;
   hsdram1.Init.ColumnBitsNumber = FMC_SDRAM_COLUMN_BITS_NUM_8;
   hsdram1.Init.RowBitsNumber = FMC_SDRAM_ROW_BITS_NUM_13;
@@ -53,7 +50,7 @@ void MX_FMC_Init(void) {
   hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_PERIOD_2;
   hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_DISABLE;
   hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_0;
-  /* SdramTiming */
+
   SdramTiming.LoadToActiveDelay = 16;
   SdramTiming.ExitSelfRefreshDelay = 16;
   SdramTiming.SelfRefreshTime = 16;
@@ -78,13 +75,20 @@ void MX_FMC_Init(void) {
   HAL_Delay(1);
 
   cmd.CommandMode = FMC_SDRAM_CMD_PALL;
+  cmd.CommandTarget = FMC_SDRAM_CMD_TARGET_BANK1;
+  cmd.AutoRefreshNumber = 1;
+  cmd.ModeRegisterDefinition = 0;
+
   HAL_SDRAM_SendCommand(&hsdram1, &cmd, 1000);
 
   cmd.CommandMode = FMC_SDRAM_CMD_AUTOREFRESH_MODE;
+  cmd.CommandTarget = FMC_SDRAM_CMD_TARGET_BANK1;
   cmd.AutoRefreshNumber = 8;
+  cmd.ModeRegisterDefinition = 0;
   HAL_SDRAM_SendCommand(&hsdram1, &cmd, 1000);
 
   cmd.CommandMode = FMC_SDRAM_CMD_LOAD_MODE;
+  cmd.CommandTarget = FMC_SDRAM_CMD_TARGET_BANK1;
   cmd.AutoRefreshNumber = 1;
   /*  SDRAM standard JESD79F from JEDEC
    *  ModeRegisterDefinition Bit-field
@@ -94,7 +98,7 @@ void MX_FMC_Init(void) {
    * when bit 8 is 1 and everything else is 0
    * SDRAM is in normal mode
    */
-  cmd.ModeRegisterDefinition = 0x120; // CAS 1
+  cmd.ModeRegisterDefinition = 0x00000120; // CAS 1
   HAL_SDRAM_SendCommand(&hsdram1, &cmd, 1000);
 
   // w9825g6kh datasheet says tREF = 64ms
